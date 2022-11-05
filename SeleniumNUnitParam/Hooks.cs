@@ -34,9 +34,6 @@ namespace SeleniumNUnitParam
         private void ChooseDriverInstance(BrowerType browserType)
         {
             if (browserType == BrowerType.Chrome)
-                ChromeOptions options = new ChromeOptions();
-                options.setBinary("C:\Program Files\Google\Chrome\Application\chromedriver.exe");
-                
                 Driver = new ChromeDriver();
             else if (browserType == BrowerType.Firefox)
             {
