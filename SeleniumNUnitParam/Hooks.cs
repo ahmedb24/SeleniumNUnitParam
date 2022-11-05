@@ -34,6 +34,7 @@ namespace SeleniumNUnitParam
         private void ChooseDriverInstance(BrowerType browserType)
         {
             if (browserType == BrowerType.Chrome)
+                ChromeOptions options = new ChromeOptions();
                 Driver = new ChromeDriver();
             else if (browserType == BrowerType.Firefox)
             {
