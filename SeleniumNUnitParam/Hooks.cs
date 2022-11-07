@@ -35,15 +35,22 @@ namespace SeleniumNUnitParam
         {
             if (browserType == BrowerType.Chrome) 
             {
-                Driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.AcceptInsecureCertificates = true;
+                
+                Driver = new ChromeDriver(options);
             }
             else if (browserType == BrowerType.Firefox)
             {
                 FirefoxDriverService service = FirefoxDriverService.CreateDefaultService();
-                service.FirefoxBinaryPath = @"C:\Users\SD-23\.jenkins\workspace\DotNetNunitPipeline\SeleniumNUnitParam\bin\Debug\geckodriver.exe";
+                service.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
                 service.HideCommandPromptWindow = true;
                 service.SuppressInitialDiagnosticInformation = true;
-                Driver = new FirefoxDriver(service);
+                
+                FirefoxOptions options = new FirefoxOptions();
+                options.AcceptInsecureCertificates = true;
+                
+                Driver = new FirefoxDriver(service, options);
             }
             else if(browserType == BrowerType.IE)
             {
