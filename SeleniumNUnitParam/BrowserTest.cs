@@ -28,8 +28,6 @@ namespace SeleniumNUnitParam
         public void ExecuteAutomationTest()
         {
             Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
-            Driver.FindElement(By.Id("details-button")).Click();
-            Driver.FindElement(By.Id("proceed-link")).Click();
             Driver.FindElement(By.Name("UserName")).SendKeys("admin");
             Driver.FindElement(By.Name("Password")).SendKeys("admin");
             Driver.FindElement(By.Name("Login")).Submit();
