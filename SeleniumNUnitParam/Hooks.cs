@@ -42,15 +42,15 @@ namespace SeleniumNUnitParam
             }
             else if (browserType == BrowerType.Firefox)
             {
-                //FirefoxDriverService service = FirefoxDriverService.CreateDefaultService();
+                FirefoxDriverService service = FirefoxDriverService.CreateDefaultService();
                 //service.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
-                //service.HideCommandPromptWindow = true;
-                //service.SuppressInitialDiagnosticInformation = true;
+                service.HideCommandPromptWindow = true;
+                service.SuppressInitialDiagnosticInformation = true;
                 
                 FirefoxOptions options = new FirefoxOptions();
                 options.AcceptInsecureCertificates = true;
                 
-                Driver = new FirefoxDriver(options);
+                Driver = new FirefoxDriver(service, options);
             }
             else if(browserType == BrowerType.IE)
             {
